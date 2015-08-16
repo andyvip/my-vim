@@ -1,0 +1,157 @@
+"""""""""""""""""""""""pathogen"""""""""""""""""""""""""""
+call pathogen#infect()
+
+
+
+
+"""""""""""""""""""""""Normal"""""""""""""""""""""""""""
+"显示当前模式
+set showmode
+
+"显示行号
+set number
+
+"显示当前光标
+set cursorline                                                                                                      
+
+"取消折行
+set nowrap     
+
+"设置制表符显示格式
+"set list
+set listchars=tab:>-,trail:-
+
+"搜索时忽略大小写
+set ignorecase
+
+"搜索高亮显示
+set hlsearch
+
+"搜索在键入目标字符串时就开始
+set incsearch
+
+"搜索到达文件开头或末尾自动循环
+set wrapscan
+
+"设置显示区的大小
+"set cmdheight=2
+
+"显示光标位置
+"set rulerformat=%20(%2*%<%f%=\%m%r\ %3l\ %c\ %p%%%)
+set ruler
+
+"显示当前命令
+"set showcmd
+"set laststatus=1
+"set statusline=%ddF%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+
+"语法高亮
+syntax on/enable
+
+"设置缩进
+set autoindent
+set softtabstop=4
+set shiftwidth=4
+set et
+set smarttab
+
+"装入对应文件的类型的设置
+filetype plugin on
+filetype indent on
+
+"其它设置
+set noerrorbells
+set nobackup
+setlocal noswapfile
+set viminfo+=!
+
+
+
+
+"""""""""""""""""""""""map"""""""""""""""""""""""""""
+map <C-l> :tabn<CR> 
+map <C-h> :tabp<CR>
+
+
+
+
+"""""""""""""""""""""""plugin"""""""""""""""""""""""""""
+"tagbar
+autocmd BufRead * Tagbar
+nmap <F2> :TagbarToggle<CR>
+
+"NERDTree
+map <F3> :NERDTreeToggle<CR>
+let NERDTreeWinPos="left"
+let NERDTreeShowBookmarks=1
+
+"NERDTree-tab
+let g:nerdtree_tabs_open_on_gui_startup=1
+let g:nerdtree_tabs_open_on_console_startup=1
+let g:nerdtree_tabs_no_startup_for_diff=1
+let g:nerdtree_tabs_smart_startup_focus=1
+
+"word-complete
+autocmd BufEnter * call DoWordComplete()
+let g:WC_min_len=1
+
+"flake8
+autocmd BufWritePost *.py call Flake8()
+let g:flake8_ignore="E501"
+
+"markdown
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_initial_foldlevel=1
+
+
+
+
+"""""""""""""""""""""""Vim color file"""""""""""""""""""""""""""
+"http://vimcolorschemetest.googlecode.com/svn/html/index-html.html
+
+set background=dark
+set t_Co=256
+"let g:colors_name="256-jungle"
+
+let python_highlight_all = 1
+let c_gnu = 1
+
+
+hi Normal       ctermfg=253         ctermbg=234         cterm=None
+hi Cursor       ctermfg=253         ctermbg=57          cterm=None
+hi SpecialKey   ctermfg=70          ctermbg=None        cterm=None
+hi Directory    ctermfg=57          ctermbg=254         cterm=None
+hi ErrorMsg     ctermfg=160         ctermbg=245         cterm=None
+hi PreProc      ctermfg=243         ctermbg=None        cterm=Bold
+hi Search       ctermfg=125         ctermbg=None        cterm=Bold
+hi Type         ctermfg=166         ctermbg=None        cterm=Bold
+hi Statement    ctermfg=172         ctermbg=None        cterm=Bold
+hi Comment      ctermfg=240         ctermbg=None        cterm=None
+hi LineNr       ctermfg=244         ctermbg=233         cterm=None
+hi NonText      ctermfg=105         ctermbg=None        cterm=Bold
+hi DiffText     ctermfg=165         ctermbg=244         cterm=None
+hi Constant     ctermfg=76          ctermbg=None        cterm=None
+hi Todo         ctermfg=162         ctermbg=None        cterm=Bold
+hi Identifier   ctermfg=142         ctermbg=None        cterm=Bold
+hi Error        ctermfg=None        ctermbg=196         cterm=Bold
+hi Special      ctermfg=172         ctermbg=None        cterm=Bold
+hi Ignore       ctermfg=221         ctermbg=None        cterm=Bold
+hi Underline    ctermfg=147         ctermbg=None        cterm=Italic
+
+hi FoldColumn   ctermfg=132         ctermbg=None        cterm=None
+hi Folded       ctermfg=132         ctermbg=None        cterm=Bold
+
+hi Visual       ctermfg=248         ctermbg=238         cterm=None
+
+hi Pmenu        ctermfg=62          ctermbg=233         cterm=None
+hi PmenuSel     ctermfg=69          ctermbg=232         cterm=Bold
+hi PmenuSbar    ctermfg=247         ctermbg=233         cterm=Bold
+hi PmenuThumb   ctermfg=248         ctermbg=233         cterm=None
+
+hi StatusLineNC ctermfg=248         ctermbg=239         cterm=None
+hi StatusLine   ctermfg=39          ctermbg=239         cterm=None
+hi VertSplit    ctermfg=239         ctermbg=239         cterm=None
+
+hi TabLine      ctermfg=245         ctermbg=239         cterm=None
+hi TabLineFill  ctermfg=239         ctermbg=239
+hi TabLineSel   ctermfg=104         ctermbg=236         cterm=Bold
