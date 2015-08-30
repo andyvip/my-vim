@@ -1,3 +1,5 @@
+set runtimepath+=$PWD/vim
+
 """""""""""""""""""""""pathogen"""""""""""""""""""""""""""
 call pathogen#infect()
 
@@ -77,7 +79,7 @@ map <C-h> :tabp<CR>
 
 """""""""""""""""""""""plugin"""""""""""""""""""""""""""
 "tagbar
-autocmd BufRead * Tagbar
+"autocmd BufRead * Tagbar
 nmap <F2> :TagbarToggle<CR>
 
 "NERDTree
@@ -86,17 +88,19 @@ let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
 "NERDTree-tab
-let g:nerdtree_tabs_open_on_gui_startup=1
-let g:nerdtree_tabs_open_on_console_startup=1
+"let g:nerdtree_tabs_open_on_gui_startup=1
+"let g:nerdtree_tabs_open_on_console_startup=1
 let g:nerdtree_tabs_no_startup_for_diff=1
 let g:nerdtree_tabs_smart_startup_focus=1
 
 "word-complete
 autocmd BufEnter * call DoWordComplete()
-let g:WC_min_len=1
+map <F4> :call EndWordComplete()
+let g:WC_min_len=2
 
 "flake8
-autocmd BufWritePost *.py call Flake8()
+"autocmd BufWritePost *.py call Flake8()
+map <F5> :call Flake8()
 let g:flake8_ignore="E501"
 
 "markdown

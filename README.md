@@ -1,4 +1,3 @@
-# vim-config
-
+# vim-setting
 ###INSTALL
-bash config.sh
+source config.sh
