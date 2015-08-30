@@ -1,5 +1,3 @@
-set runtimepath+=$PWD/vim
-
 """""""""""""""""""""""pathogen"""""""""""""""""""""""""""
 call pathogen#infect()
 
