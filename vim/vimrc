@@ -85,6 +85,12 @@ map <F3> :NERDTreeToggle<CR>
 let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
+"ctrlp
+let g:ctrlp_by_filename = 1
+let g:ctrlp_regexp = 0
+let g:ctrlp_clear_cache_on_exit = 1
+
+
 "flake8
 "autocmd BufWritePost *.py call Flake8()
 "map <F5> :call Flake8()
