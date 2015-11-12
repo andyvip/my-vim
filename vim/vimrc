@@ -88,10 +88,19 @@ let NERDTreeShowBookmarks=1
 "ctrlp
 let g:ctrlp_by_filename = 1
 let g:ctrlp_regexp = 0
-let g:ctrlp_clear_cache_on_exit = 1
+let g:ctrlp_clear_cache_on_exit = 0
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_use_caching = 1
+let g:ctrlp_show_hidden = 0
 
 
 "flake8
+let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 1
+let g:ctrlp_by_filename = 1
 "autocmd BufWritePost *.py call Flake8()
 "map <F5> :call Flake8()
 let g:flake8_ignore="E501"
