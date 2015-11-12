@@ -69,8 +69,8 @@ set viminfo+=!
 
 
 """""""""""""""""""""""map"""""""""""""""""""""""""""
-map <C-l> :tabn<CR> 
-map <C-h> :tabp<CR>
+"map <C-l> :tabn<CR> 
+"map <C-h> :tabp<CR>
 
 
 
@@ -78,29 +78,25 @@ map <C-h> :tabp<CR>
 """""""""""""""""""""""plugin"""""""""""""""""""""""""""
 "tagbar
 "autocmd BufRead * Tagbar
-nmap <F2> :TagbarToggle<CR>
+nmap <F9> :TagbarToggle<CR>
 
 "NERDTree
 map <F3> :NERDTreeToggle<CR>
 let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
-"NERDTree-tab
-"let g:nerdtree_tabs_open_on_gui_startup=1
-"let g:nerdtree_tabs_open_on_console_startup=1
-let g:nerdtree_tabs_no_startup_for_diff=1
-let g:nerdtree_tabs_smart_startup_focus=1
-
 "flake8
 "autocmd BufWritePost *.py call Flake8()
-map <F5> :call Flake8()
+"map <F5> :call Flake8()
 let g:flake8_ignore="E501"
 
 "markdown
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_initial_foldlevel=1
 
-
+"molokai
+let g:molokai_original = 1
+let g:rehash256 = 1
 
 """""""""""""""""""""""Vim color file"""""""""""""""""""""""""""
 "http://vimcolorschemetest.googlecode.com/svn/html/index-html.html
