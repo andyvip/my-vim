@@ -86,24 +86,28 @@ let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
 "ctrlp
-let g:ctrlp_by_filename = 1
-let g:ctrlp_regexp = 0
-let g:ctrlp_clear_cache_on_exit = 0
-let g:ctrlp_switch_buffer = 'Et'
+"let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
 let g:ctrlp_use_caching = 1
-let g:ctrlp_show_hidden = 0
-let g:ctrlp_working_path_mode = 'w'
+let g:ctrlp_clear_cache_on_exit = 0
 let g:ctrlp_max_files = 0
-"et g:ctrlp_user_command = 'find %s -type f'
-
+let g:ctrlp_working_path_mode = 'w'
+let g:ctrlp_match_window = 'bottom,order:ttb,min:1,max:10,results:10'
+let g:ctrlp_switch_buffer = 'Et'
+let g:ctrlp_open_new_file = 't'
+let g:ctrlp_tabpage_position = 'ac'
+let g:ctrlp_open_multiple_files = 't'
+let g:ctrlp_lazy_update = 0
+let g:ctrlp_regexp = 0
+let g:ctrlp_show_hidden = 0
+let g:ctrlp_by_filename = 1
+let g:ctrlp_custom_ignore = {
+    \ 'dir':  '\v[\/]\.(git|hg|svn)$',
+    \ 'file': '\v\.(exe|so|dll|a|jpg|png)$',
+    \ 'link': 'SOME_BAD_SYMBOLIC_LINKS',
+    \ }
+"let g:ctrlp_user_command = 'find %s -type f'
 
 "flake8
-let g:ctrlp_by_filename = 1
-let g:ctrlp_by_filename = 1
-let g:ctrlp_by_filename = 1
-let g:ctrlp_by_filename = 1
-let g:ctrlp_by_filename = 1
-let g:ctrlp_by_filename = 1
 "autocmd BufWritePost *.py call Flake8()
 "map <F5> :call Flake8()
 let g:flake8_ignore="E501"
