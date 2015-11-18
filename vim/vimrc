@@ -33,17 +33,11 @@ set incsearch
 "搜索到达文件开头或末尾自动循环
 set wrapscan
 
-"设置显示区的大小
-"set cmdheight=2
-
 "显示光标位置
-"set rulerformat=%20(%2*%<%f%=\%m%r\ %3l\ %c\ %p%%%)
 set ruler
 
 "显示当前命令
-"set showcmd
-"set laststatus=1
-"set statusline=%ddF%m%r%h%w\ [FORMAT=%{&ff}]\ [TYPE=%Y]\ [POS=%l,%v][%p%%]\ %{strftime(\"%d/%m/%y\ -\ %H:%M\")}
+set laststatus=2
 
 "语法高亮
 syntax on/enable
@@ -84,6 +78,15 @@ nmap <F9> :TagbarToggle<CR>
 map <F3> :NERDTreeToggle<CR>
 let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
+
+"unite
+"let g:unite_force_overwrite_statusline = 0
+call unite#custom#profile('default', 'context', {
+\   'start_insert': 0,
+\   'winheight': 10,
+\   'direction': 'botright',
+\ })
+
 
 "ctrlp
 "let g:ctrlp_cache_dir = $HOME.'/.cache/ctrlp'
