@@ -65,51 +65,54 @@ set viminfo+=!
 
 
 """""""""""""""""""""""map"""""""""""""""""""""""""""
-"map <C-l> :tabn<CR> 
-"map <C-h> :tabp<CR>
+"nmap <C-l> :tabn<CR> 
+"nmap <C-h> :tabp<CR>
+nnoremap <red> <Nop>
+nnoremap <red> <S>
 
 
 
 
 """""""""""""""""""""""plugin"""""""""""""""""""""""""""
-"airline
-let g:airline_powerline_fonts=0
-let g:airline_left_sep=' >> '
-let g:airline_right_sep=' >> '
-
-
-"tagbar
-"autocmd BufRead * Tagbar
-nmap <F9> :TagbarToggle<CR>
-
-
-"NERDTree
-map <F3> :NERDTreeToggle<CR>
-let NERDTreeWinPos="left"
-let NERDTreeShowBookmarks=1
-
-
-"flake8
-"autocmd BufWritePost *.py call Flake8()
-"map <F5> :call Flake8()
-let g:flake8_ignore="E501"
-
-
-"markdown
-let g:vim_markdown_folding_disabled=1
-let g:vim_markdown_initial_foldlevel=1
-
-
 "molokai
 let g:molokai_original=1
 let g:rehash256=1
 
 
+"airline
+let g:airline_theme='molokai'
+let g:airline_powerline_fonts=0
+let g:airline_left_sep=''
+let g:airline_right_sep=''
+let g:airline_section_c='%F'
+
+
 "syntastic
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 0
-let g:syntastic_check_on_wq = 0
+noremap <silent>sc :SyntasticCheck<CR>
+noremap <silent>sr :SyntasticReset<CR>
+let g:syntastic_mode_map={"mode": "active", "active_filetypes": [], "passive_filetypes": []}
+let g:syntastic_always_populate_loc_list=1
+let g:syntastic_auto_loc_list=1
+let g:syntastic_enable_signs=1
+let g:syntastic_check_on_open=0
+let g:syntastic_check_on_wq=0
+
+
+"flake8
+"autocmd BufWritePost *.py call Flake8()
+noremap <silent><F3> :call Flake8()
+let g:flake8_ignore="E501"
+
+
+"tagbar
+"autocmd BufRead * Tagbar
+noremap <silent><F9> :TagbarToggle<CR>
+
+
+"nerdtree
+noremap <silent><F8> :NERDTreeToggle<CR>
+let NERDTreeWinPos="left"
+let NERDTreeShowBookmarks=1
 
 
 "ctrlp
@@ -137,12 +140,19 @@ let g:ctrlp_custom_ignore={
 
 "unite
 "let g:unite_force_overwrite_statusline = 0
-nnoremap <silent> <buffer> <C-t> :Unite outline -start-insert<CR>
+nnoremap <silent><buffer>uf :Unite -start-insert file_rec/async<CR>
+nnoremap <silent><buffer>ut :Unite -start-insert outline<CR>
+nnoremap <silent><buffer>ug :Unite -start-insert grep<CR>
 call unite#custom#profile('default', 'context', {
 \   'start_insert': 0,
 \   'winheight': 10,
 \   'direction': 'botright',
 \ })
+
+
+"markdown
+let g:vim_markdown_folding_disabled=1
+let g:vim_markdown_initial_foldlevel=1
 
 
 """""""""""""""""""""""Vim color file"""""""""""""""""""""""""""
