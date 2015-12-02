@@ -80,7 +80,7 @@ let g:rehash256=1
 
 
 "airline
-let g:airline_theme='molokai'
+let g:airline_theme='powerlineish'
 let g:airline_powerline_fonts=0
 let g:airline_left_sep=''
 let g:airline_right_sep=''
@@ -140,9 +140,10 @@ let g:ctrlp_custom_ignore={
 
 "unite
 "let g:unite_force_overwrite_statusline = 0
-nnoremap <silent><buffer>uf :Unite -start-insert file_rec/async<CR>
-nnoremap <silent><buffer>ut :Unite -start-insert outline<CR>
-nnoremap <silent><buffer>ug :Unite -start-insert grep<CR>
+nnoremap <silent><buffer>uf :Unite -silent -start-insert file_rec/async<CR>
+nnoremap <silent><buffer>ut :Unite -silent -toggle -start-insert outline<CR>
+nnoremap <silent><buffer>ug :Unite -silent -toggle -start-insert grep<CR>
+let g:unite_prompt='>>> '
 call unite#custom#profile('default', 'context', {
 \   'start_insert': 0,
 \   'winheight': 10,
