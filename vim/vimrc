@@ -140,11 +140,12 @@ let g:ctrlp_custom_ignore={
 
 "unite
 "let g:unite_force_overwrite_statusline = 0
-nnoremap <silent><buffer>uf :Unite -silent -start-insert file_rec/async<CR>
-nnoremap <silent><buffer>ut :Unite -silent -toggle -start-insert outline<CR>
-nnoremap <silent><buffer>ug :Unite -silent -toggle -start-insert grep<CR>
-let g:unite_prompt='>>> '
+nnoremap <silent>uf :Unite -silent -start-insert file_rec/async<CR>
+nnoremap <silent>ut :Unite -silent -start-insert outline<CR>
+nnoremap <silent>ug :Unite -silent -start-insert grep<CR>
 call unite#custom#profile('default', 'context', {
+\   'prompt': '>d> ',
+\   'candidate_icon': '>',
 \   'start_insert': 0,
 \   'winheight': 10,
 \   'direction': 'botright',
