@@ -64,15 +64,6 @@ set viminfo+=!
 
 
 
-"""""""""""""""""""""""map"""""""""""""""""""""""""""
-"nmap <C-l> :tabn<CR> 
-"nmap <C-h> :tabp<CR>
-nnoremap <red> <Nop>
-nnoremap <red> <S>
-
-
-
-
 """""""""""""""""""""""plugin"""""""""""""""""""""""""""
 "molokai
 let g:molokai_original=1
@@ -88,8 +79,6 @@ let g:airline_section_c='%F'
 
 
 "syntastic
-noremap <silent>sc :SyntasticCheck<CR>
-noremap <silent>sr :SyntasticReset<CR>
 let g:syntastic_mode_map={"mode": "active", "active_filetypes": [], "passive_filetypes": []}
 let g:syntastic_always_populate_loc_list=1
 let g:syntastic_auto_loc_list=1
@@ -100,17 +89,14 @@ let g:syntastic_check_on_wq=0
 
 "flake8
 "autocmd BufWritePost *.py call Flake8()
-noremap <silent><F3> :call Flake8()
 let g:flake8_ignore="E501"
 
 
 "tagbar
 "autocmd BufRead * Tagbar
-noremap <silent><F9> :TagbarToggle<CR>
 
 
 "nerdtree
-noremap <silent><F8> :NERDTreeToggle<CR>
 let NERDTreeWinPos="left"
 let NERDTreeShowBookmarks=1
 
@@ -139,10 +125,6 @@ let g:ctrlp_custom_ignore={
 
 
 "unite
-"let g:unite_force_overwrite_statusline = 0
-nnoremap <silent>uf :Unite -silent -start-insert file_rec/async<CR>
-nnoremap <silent>ut :Unite -silent -start-insert outline<CR>
-nnoremap <silent>ug :Unite -silent -start-insert grep<CR>
 call unite#custom#profile('default', 'context', {
 \   'prompt': '>d> ',
 \   'candidate_icon': '>',
@@ -155,6 +137,28 @@ call unite#custom#profile('default', 'context', {
 "markdown
 let g:vim_markdown_folding_disabled=1
 let g:vim_markdown_initial_foldlevel=1
+
+
+
+
+
+"""""""""""""""""""""""map"""""""""""""""""""""""""""
+"nmap <C-l> :tabn<CR> 
+"nmap <C-h> :tabp<CR>
+noremap <silent><F9> :TagbarToggle<CR>
+noremap <silent><F8> :NERDTreeToggle<CR>
+noremap <silent><F3> :call Flake8()
+noremap <silent>sc :SyntasticCheck<CR>
+noremap <silent>sr :SyntasticReset<CR>
+nnoremap <silent>uf :Unite -silent -start-insert file_rec/async<CR>
+nnoremap <silent>ut :Unite -silent -start-insert outline<CR>
+nnoremap <silent>ug :Unite -silent -start-insert grep<CR>
+
+
+
+
+
+
 
 
 """""""""""""""""""""""Vim color file"""""""""""""""""""""""""""
