@@ -145,15 +145,15 @@ let g:vim_markdown_initial_foldlevel=1
 """""""""""""""""""""""map"""""""""""""""""""""""""""
 "nmap <C-l> :tabn<CR> 
 "nmap <C-h> :tabp<CR>
-noremap <silent><F9> :TagbarToggle<CR>
+noremap <silent><F2> <Esc>:w<CR>
 noremap <silent><F8> :NERDTreeToggle<CR>
-noremap <silent><F3> :call Flake8()
-noremap <silent>sc :SyntasticCheck<CR>
-noremap <silent>sr :SyntasticReset<CR>
-nnoremap <silent>uf :Unite -silent -start-insert file_rec/async<CR>
-nnoremap <silent>ut :Unite -silent -start-insert outline<CR>
-nnoremap <silent>ug :Unite -silent -start-insert grep<CR>
-
+noremap <silent><F9> :TagbarToggle<CR>
+noremap <silent>ea :SyntasticCheck<CR>
+noremap <silent>er :SyntasticReset<CR>
+noremap <silent>ep :call Flake8()<CR>
+noremap <silent>sf :Unite -silent -start-insert file_rec/async<CR>
+noremap <silent>st :Unite -silent -start-insert outline<CR>
+noremap <silent>ss :Unite -silent -start-insert grep<CR>
 
 
 
