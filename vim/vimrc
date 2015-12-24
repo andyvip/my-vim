@@ -126,7 +126,7 @@ let g:ctrlp_custom_ignore={
 
 "unite
 call unite#custom#profile('default', 'context', {
-\   'prompt': '>d> ',
+\   'prompt': '>unit> ',
 \   'candidate_icon': '>',
 \   'start_insert': 0,
 \   'winheight': 10,
