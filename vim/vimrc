@@ -145,9 +145,9 @@ let g:vim_markdown_initial_foldlevel=1
 """""""""""""""""""""""map"""""""""""""""""""""""""""
 "nmap <C-l> :tabn<CR> 
 "nmap <C-h> :tabp<CR>
-noremap <silent><F2> <Esc>:w<CR>
-noremap <silent><F8> :NERDTreeToggle<CR>
-noremap <silent><F9> :TagbarToggle<CR>
+noremap <silent><C-s> <Esc>:w<CR>
+noremap <silent><C-8> :NERDTreeToggle<CR>
+noremap <silent><C-9> :TagbarToggle<CR>
 noremap <silent>ea :SyntasticCheck<CR>
 noremap <silent>er :SyntasticReset<CR>
 noremap <silent>ep :call Flake8()<CR>
