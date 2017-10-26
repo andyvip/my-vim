@@ -1,0 +1,7 @@
+export MYVIM=$PWD
+
+echo "set runtimepath+=$MYVIM/vim \nsource $MYVIM/vim/vimrc" > $MYVIM/.vimrc
+
+if [ `touch ~/.vimrc && grep -wc "source $MYVIM/.vimrc" ~/.vimrc` -eq 0 ]; then
+    echo "source $MYVIM/.vimrc" >> ~/.vimrc
+fi
